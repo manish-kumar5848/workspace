@@ -117,3 +117,52 @@ let r2 =numbers.sort();
 
 console.log(r2);
 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//************************************************************************************************* *//
+/* OOP*/
+
+// ******************Classs*********************
+
+// Hoisting using class is not possible
+// we have to declare the class before using it unlike the function
+
+class vehicle{
+    name;
+    price;
+    constructor(name,price){
+        this.name = name;
+        this.price = price;
+    }
+    getNAme(){
+        return this.name;
+    }
+    setName(name){
+        this.name = name;
+    }
+    getPrice(){
+        return this.price;
+    }
+    setPrice(price){
+        this.price=price;
+    }
+    
+}
+
+let v1 = new vehicle("cycle",4568);
+console.log(v1);
+console.log(v1.getNAme());
+console.log(v1.getPrice());
+
+class Car extends vehicle{
+    carBrand;
+    modelName;
+    constructor(name,price,carBrand,modelName){
+        super(name,price);
+        this.carBrand = carBrand;
+        this.modelName = modelName;
+    }
+}
+
+let v2= new Car("Car",5868,"mahindra","XUV");
+console.log(v2);
