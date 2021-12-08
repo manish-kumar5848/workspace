@@ -166,3 +166,44 @@ class Car extends vehicle{
 
 let v2= new Car("Car",5868,"mahindra","XUV");
 console.log(v2);
+
+
+
+
+//Fetch API and DOM
+
+
+ const element = document.getElementById('container');
+element.style.color = 'red'; 
+
+let pArray = document.querySelectorAll('p')
+console.log(pArray)
+
+
+Array.from(pArray).forEach((v3)=>{
+    v3.style.backgroundColor='green'
+})
+
+
+bttn= document.querySelector('#mybtn');
+console.log(bttn);
+bttn.addEventListener('click',displayMessage);
+function displayMessage(){
+   let messageDiv = document.getElementById('new');
+   messageDiv.innerHTML ='Thanks for Clicking me';
+   messageDiv.style.border='1px solid black'
+}
+bttn2=document.querySelector('#mybtn2')
+bttn2.addEventListener('click',getData);
+
+function getData(){
+    var para = document.createElement("P");
+    url='manish.txt';
+    fetch(url).then((response)=>{
+        return response.text();
+    }).then((data)=>{
+        para.innerText=data;
+        document.body.appendChild(para);
+        console.log(data);
+    })
+}
